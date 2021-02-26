@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts.js">
+	</script>
+	<link rel="stylesheet" href="styles.css">
+    <title>Customer Churn Rate Visualization</title>
+    <style>p {margin-left: 80px; margin-right: 80px;} h2 {margin-left: 80px; margin-right: 80px;}</style>
+
+</head>
+<body style="background-image: url({{url_for('static',filename='background3.jpg') }})">
+
+    <!-- HEADING -->
+    <center><br>
+        <h2 class="display-4"><span class="badge badge-secondary">Bussiness Insight</span></h2>
+        <img src="../static/logo 4.png" width="8%" ><br><br>
+        <br>
+    </center>
+
+    <!-- Wine Quality -->
+    <div class="container-fluid">
+        <h2 class="display-5"><span class="badge badge-secondary">Churn Rate</span></h2>
+        <center><img src="../static/churnplot.png" width="800" height="600"><br><br></center>
+        <p>
+            <strong>Analysis</strong><br>
+            On this dataset, we have 7043 customers with 26,5% Churn Rate
+<br><br>
+        </p>
+    </div>
+
+    <!-- Wine Quality -->
+    <div class="container-fluid">
+        <h2 class="display-5"><span class="badge badge-secondary">Categorical Features</span></h2>
+        <center><img src="../static/countplot.png" width="1500" height="1200"><br><br></center>
+        <p>
+            <strong>Analysis</strong><br>
+            From all the features, i categorized them based on the Churn rate. These are the features that has the higher Churn rate than the rest of the features (around 40% or more):<br>
+            * Internet service – fiber optic: 42% churn rate<br>
+            * Internet service – no online security: 42% churn rate<br>
+            * Internet service – no online backup: 40% churn rate<br>
+            * Internet service – no device protection: 39% churn rate<br>
+            * Internet service – no tech support: 42% churn rate<br>
+            * Contract – month-to-month: 43% churn rate<br>
+            * Payment method – electronic check: 45% churn rate<br>
+            * Shorter tenure period -> higher churn rate<br>
+            * Higher Monthly charges -> higher churn rate<br>
+<br><br>
+        </p>
+    </div>
+    
+    <!-- Distribution -->
+    <div class="container-fluid">
+        <h2 class="display-5"><span class="badge badge-secondary">Numerical Features</span></h2>
+        <center><img src="../static/distplot.png" width="1000" height="500"><br><br></center>
+        <center><img src="../static/scatterplot.png" width="1000" height="500"><br><br></center>
+        <p>
+        <strong>Analysis</strong><br>
+        * We can infer that the customers that has relatively low Tenure tends to Churn (Shorter Tenure period customers has higher Churn rate than longer ones).<br>
+        * The longer our customers use our service, the Churn rate will be lower.<br>
+        * We can infer that customers with higher MonthlyCharges (in the range of around 70 until 110) tends to Churn.<br>
+        * From the scatterplot, we can see the pattern of our churned customers; it is relatively dense in the area of short Tenure and high MonthlyCharges. 
+<br><br>
+        </p>
+    </div>
+
+    
+    <!-- LOG OUT BUTTON -->
+    <center>
+        <form action = "http://127.0.0.1:5000">
+        <button style="height:45px;width:150px;font-size: 20px;text-align: center;line-height: 20px; background-color: #f50101;color: cornsilk;  type="button" class="btn btn-info"">Home</button>
+        </form><br><br>
+    </center>
+    
+    <!--JavaScript at end of body for optimized loading-->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>
